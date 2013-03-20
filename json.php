@@ -10,14 +10,14 @@ if (isset($_GET['mode'])) {
 }
 
 if ($mode == 'get_users') {
-    $users = $db->select('users');
-    echo json_encode(array('data' => $users, 'error' => false));
+    $users = $db->firstRow('users');
+    echo json_encode($users);
 } else if ($mode == 'insert_user') {
     if (isset($_GET['data'])) {
         $user = $_GET['data'];
         $user = json_decode($user);
-        $db->insert('users', $user);
-        echo json_encode(array('error' => false, 'response' => 'User was inserted correctly'));
+        $result = $db->insert('users', $user);
+        echo json_encode($result);
     } else {
         echo json_encode(array('error' => true, 'errorMsg' => "This mode requires 'data'"));
     }

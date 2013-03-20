@@ -42,31 +42,48 @@ class Db {
         if ($where !== null) {
             $query .= " " . $where;
         }
-        
+
         $result = mysqli_query($this->_con, $query);
         $data = array();
-        while ($row = mysqli_fetch_object($result)) {
-            $data[] = $row;
+        if ($result !== false) {
+            while ($row = mysqli_fetch_object($result)) {
+                $data[] = $row;
+            }
+            if ($data === array()) { 
+                return array('error' => true, 'errorMsg' => 'No results where found with the query:"' . $query . '"');
+            } else {
+                return array('data' => $data, 'error' => false);
+            }
+        } else {
+            return array('error' => true, 'errorMsg' => mysqli_error($this->_con));
         }
-        
-        return $data;
     }
-    
+
     public function firstRow($tableName, $columns = null, $where = null) {
-        $data = $this->select($tableName, $columns, $where);
-        return $data[0];
-    }
-    
-    public function firstCell($tableName, $columns = null, $where = null) {
-        $data = $this->firstRow($tableName, $columns, $where);
-        foreach ($data as $column) {
-            return $column;
+        $result = $this->select($tableName, $columns, $where);
+        if (!$result['error']) {
+            $data = array('data' => $result['data'][0], 'error' => $result['error']);
+            return $data;
+        } else {
+            return $result;
         }
     }
-    
+
+    public function firstCell($tableName, $columns = null, $where = null) {
+        $result = $this->firstRow($tableName, $columns, $where);
+        if (!$result['error']) {
+            $data = $result['data'];
+            foreach ($data as $column) {
+                return array('data' => $column, 'error' => $result['error']);
+            }
+        } else {
+            return $result;
+        }
+    }
+
     public function insert($tableName, $data) {
         $query = "INSERT INTO `" . $this->escape($tableName) . "` SET";
-        
+
         $first = true;
         foreach ($data as $key => $value) {
             if ($first) {
@@ -76,8 +93,13 @@ class Db {
                 $query .= ", `" . $this->escape($key) . "`='" . $this->escape($value) . "'";
             }
         }
-        
+
         mysqli_query($this->_con, $query);
+        if (mysqli_error($this->_con)) {
+            return array('error' => true, 'errorMsg' => mysqli_error($this->_con));
+        } else {
+            return array('error' => false, 'response' => 'Data was inserted successfully in the table `' . $this->escape($tableName) . '`');
+        }
     }
 
     private function escape($string) {
