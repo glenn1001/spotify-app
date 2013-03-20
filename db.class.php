@@ -103,7 +103,7 @@ class Db {
     }
 
     private function escape($string) {
-        return $string;
+        return mysqli_escape_string($this->_con, $string);
     }
 
 }

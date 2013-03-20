@@ -10,7 +10,7 @@ if (isset($_GET['mode'])) {
 }
 
 if ($mode == 'get_users') {
-    $users = $db->firstRow('users');
+    $users = $db->select('users');
     echo json_encode($users);
 } else if ($mode == 'insert_user') {
     if (isset($_GET['data'])) {
