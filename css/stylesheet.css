@@ -1,0 +1,354 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Share Tech Mono', sans-serif;
+}
+
+html {
+    width: 100%;
+    background-image: url(../img/bg/texture.jpg);
+}
+
+label {
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+ol {
+    margin-left: 25px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.clear {
+    clear: both;
+}
+
+#logo {
+    float: left;
+    border-style: none;
+    margin-top: 20px;
+}
+
+#header {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#profile {
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    width: 250px;
+    background-color: #7FB718;
+    background: -webkit-gradient(linear, left top, left bottom, from(#7FB718), to(#6b9313));
+    background: -moz-linear-gradient(top, #7FB718, #6b9313);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FB718, endColorstr=#6b9313);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FB718, endColorstr=#6b9313)";
+}
+
+#profile-header {
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+    border: 1px solid #000000;
+}
+
+#profile-dropdown {
+    display: none;
+    position: absolute;
+    width: 248px;
+    border: 1px solid #000000;
+    border-top-style: hidden;
+    box-shadow: 5px 5px 30px black;
+    z-index: 50;
+}
+
+#profile-form {
+    background-color: #7FB718;
+    padding: 10px 0;
+    max-width: 250px;
+}
+
+#profile-form em {
+    display: block;
+    margin: 0 auto;
+    background: url('../img/bg/or-sprite.png') no-repeat center center;
+    text-align: center;
+    font-style: normal;
+    color: #243802;
+}
+
+#profile-form input {
+    display: block;
+    margin: 10px auto;
+    padding: 0;
+    border-radius: 3px;
+    padding: 5px 5px;
+    border-style: none;
+    width: 190px;
+}
+
+#profile-form button {
+    display: block;
+    margin: 10px auto;
+    border-radius: 3px;
+    padding: 5px 5px;
+    border-style: none;
+    border: 1px inset #000000;
+    border-top-style: none;
+    border-left-style: none;
+    width: 200px;
+    font-weight: bold;
+}
+
+#profile-form button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#profile-form button:active {
+    border: 1px inset #000000;
+    border-bottom-style: none;
+    border-right-style: none;
+}
+
+#profile-form a, #profile-form a:active, #profile-form a:link, #profile-form a:visited, #profile-form a:hover {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    text-decoration: none;
+    color: #000000;
+}
+
+#profile-form a:hover {
+    text-decoration: underline;
+}
+
+.facebooklogin {
+    margin-top: 0px !important;
+    border-color: #3b5487 !important;
+    color: #FFFFFF;
+    background-color: #6480b7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6480b7), to(#3b5487));
+    background: -moz-linear-gradient(top, #6480b7, #3b5487);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6480b7, endColorstr=#3b5487);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#6480b7, endColorstr=#3b5487)";
+}
+
+.twitterlogin {
+    border-color: #0086ba !important;
+    color: #FFFFFF;
+    background-color: #00acee;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00acee), to(#0086ba));
+    background: -moz-linear-gradient(top, #00acee, #0086ba);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00acee, endColorstr=#0086ba);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00acee, endColorstr=#0086ba)";
+}
+
+#profile-form .button {
+    margin: 10px auto !important;
+}
+
+.button {
+    display: block;
+    border-radius: 3px;
+    margin: 10px 0;
+    padding: 5px 0;
+    border-style: none;
+    border: 1px inset #000000;
+    border-top-style: none;
+    border-left-style: none;
+    width: 200px;
+    font-weight: bold;
+    border-color: #000000 !important;
+    color: #7FB718 !important;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    background-color: #222c06;
+    background: -webkit-gradient(linear, left top, left bottom, from(#222c06), to(#000000));
+    background: -moz-linear-gradient(top, #222c06, #000000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#222c06, endColorstr=#000000);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#222c06, endColorstr=#000000)";
+}
+
+.button:active {
+    border: 1px inset #000000;
+    border-bottom-style: none;
+    border-right-style: none;
+}
+
+#profile-form hr {
+    width: 228px;
+    margin: 0 auto;
+    border-color: #222c06;
+    border-width: 1px 0 0 0;
+}
+
+#nav {
+    margin-top: 30px;
+    width: 100%;
+    background: url('../img/bg/slice.jpg');
+    height: 30px;
+}
+
+#nav ul {
+    display: block;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+#nav li {
+    margin: 0 60px 0 0;
+    list-style: none;
+    float: left;
+    color: #7FB718;
+    padding-top: 2px;
+}
+
+#nav a:link, #nav a:visited, #nav a:hover, #nav a:active {
+    font-weight: bold;
+    color: #7FB718;
+    text-decoration: none;
+}
+
+#nav a:hover {
+    text-decoration: underline;
+}
+
+#page {
+    background-color: #7FB718;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 10px 10px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 30px black;
+}
+
+#register div {
+    margin: 10px 0;
+}
+
+#register label {
+    display: inline-block;
+    width: 150px;
+}
+
+.score {
+    position: relative;
+    margin: -10px -10px 20px -10px;
+    padding: 20px;
+    background: black;
+    color: #7FB718;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.achievement {
+    position: relative;
+    width: 300px;
+    margin: 0 5px 10px;
+    float: left;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px black
+}
+
+.achievement .completed {
+    position: absolute;
+    left: 41px;
+    width: 218px;
+    height: 132px;
+    background: url('../img/completed.gif');
+}
+
+.achievement .completed .facebook_share {
+    width: 80px;
+    position: relative;
+    top: 104px;
+    left: 138px;
+    cursor: pointer;
+}
+
+.achievement .title {
+    padding: 5px;
+    background: #bfbfbf;
+    border-bottom: 1px solid black;
+    border-radius: 5px 5px 0 0;
+}
+
+.achievement .description {
+    height: 85px;
+    padding: 5px;
+    background: #f2f2f2;
+    border-radius: 0 0 5px 5px;
+}
+    
+.achievement .title h2 {
+    display: inline-block;
+}
+
+.achievement .title .points {
+    float: right;
+}
+
+.ranking {
+    border-collapse: collapse;
+}
+
+.ranking th {
+    border: 3px solid black;
+    padding: 3px 8px;
+}
+
+.ranking tr.me {
+    background: #6b9313;
+    font-weight: bold;
+}
+
+.ranking td {
+    border: 1px solid black;
+    padding: 3px 8px;
+}
+
+#my_profile p {
+    margin: 5px 0;
+}
+
+#my_profile strong {
+    display: inline-block;
+    width: 170px;
+}
+
+#update_user {
+    display: none;
+    margin-top: 20px;
+}
+
+#my_profile label {
+    display: inline-block;
+    width: 170px;
+    font-weight: bold;
+}
+
+.check {
+    position: absolute;
+    top: 27px;
+    right: 25px;
+    color: #7FB718;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 20px;
+}
